@@ -1,7 +1,12 @@
-# Awesome Project Build with TypeORM
+# Project Name
 
-Steps to run this project:
+## Description
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+This is a sample project created using TypeScript for building an API.
+
+## Installation
+
+1. Clone the repository.
+2. Run `npm install` to install the dependencies.
+3. Configure the environment variables.
+4. Run `npm run dev` to start the server.
