@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3001",
+            "description": "API de desenvolvimento"
+        }
+    ],
+    "paths": {
+        "/envelopes": {
+            "post": {
+                "summary": "Cria um envelope",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Envelope"
+                            },
+                            "examples": {
+                                "envelope": {
+                                    "value": {
+                                        "descricao": "Envelope",
+                                        "Repositorio": {
+                                            "id": 1
+                                        },
+                                        "Documento": [
+                                            {
+                                                "nomeArquivo": "arquivo1.pdf",
+                                                "mimeType": "application/pdf",
+                                                "conteudo": "base64"
+                                            },
+                                            {
+                                                "nomeArquivo": "arquivo2.pdf",
+                                                "mimeType": "application/pdf",
+                                                "conteudo": "base64"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Envelope criado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "response": {
+                                            "mensagem": "Um novo Envelope foi criado!",
+                                            "data": {
+                                                "listaAvisos": {
+                                                    "aviso": {
+                                                        "tipo": "S",
+                                                        "mensagem": "Um novo Envelope foi criado!"
+                                                    }
+                                                },
+                                                "idEnvelope": "63578",
+                                                "hashSHA256": "f900111630edcd11cae65fbe1669d207c7c9496d7fe7229f4a1af5b7485c51d7"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Envelope": {
+                "type": "object",
+                "properties": {
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "Repositorio": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "Documento": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "nomeArquivo": {
+                                    "type": "string"
+                                },
+                                "mimeType": {
+                                    "type": "string"
+                                },
+                                "conteudo": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

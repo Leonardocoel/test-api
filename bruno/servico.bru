@@ -1,0 +1,74 @@
+meta {
+  name: servico
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/inserirEnvelope
+  body: json
+  auth: none
+}
+
+headers {
+  Accept: application/json
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "token": "{{token}}",
+    "params": {
+      "Envelope": {
+        "descricao": "Novo Contrato",
+        "Repositorio": {
+          "id": 31501
+        },
+        "mensagem": null,
+        "mensagemObservadores": null,
+        "mensagemNotificacaoSMS": null,
+        "dataExpiracao": null,
+        "horaExpiracao": null,
+        "usarOrdem": "S",
+        "ConfigAuxiliar": {
+          "documentosComXMLs": "N",
+          "urlCarimboTempo": null
+        },
+        "listaDocumentos": {
+          "Documento": []
+        },
+        "listaSignatariosEnvelope": {
+          "SignatarioEnvelope": []
+        },
+        "listaObservadores": {
+          "Observador": []
+        },
+        "listaTags": {
+          "Tag": []
+        },
+        "listaInfoAdicional": {
+          "InfoAdicional": []
+        },
+        "incluirHashTodasPaginas": "S",
+        "permitirDespachos": "S",
+        "ignorarNotificacoes": "N",
+        "ignorarNotificacoesPendentes": "N",
+        "qrCodePosLeft": null,
+        "qrCodePosTop": null,
+        "dataIniContrato": null,
+        "dataFimContrato": null,
+        "objetoContrato": null,
+        "numContrato": null,
+        "valorContrato": null,
+        "descricaoContratante": null,
+        "descricaoContratado": null,
+        "bloquearDesenhoPaginas": "S"
+      },
+      "gerarTags": "S",
+      "encaminharImediatamente": "N",
+      "detectarCampos": "N",
+      "verificarDuplicidadeConteudo": "N",
+      "processarImagensEmSegundoPlano": "N"
+    }
+  }
+}

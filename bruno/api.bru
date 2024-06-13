@@ -1,0 +1,18 @@
+meta {
+  name: api
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3001/envelopes/status
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "idEnvelope": 1951,
+    "getLobs": "N"
+  }
+}

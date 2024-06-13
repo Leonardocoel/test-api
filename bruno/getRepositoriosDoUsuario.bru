@@ -1,0 +1,25 @@
+meta {
+  name: getRepositoriosDoUsuario
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{base_url}}/getRepositoriosDoUsuario
+  body: json
+  auth: none
+}
+
+headers {
+  Accept: application/json
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "token": "{{token}}",
+    "params": {
+      "idProprietario": 31501
+    }
+  }
+}

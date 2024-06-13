@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+dist/
+
+# TypeScript
+*.js
+*.js.map
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs
+logs/
+*.log
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+build/
